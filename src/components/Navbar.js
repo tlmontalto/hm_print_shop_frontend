@@ -19,11 +19,11 @@ export default function Navbar() {
                     </form>
                 
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Upload</a>
-                        </li>
+                        <Link to="/upload">
+                            <li className="nav-item nav-link">Upload</li>
+                        </Link>
                         <Link to="/login">
-                        <li className="nav-item nav-link">Login</li>
+                            <li className="nav-item nav-link">Login</li>
                         </Link>
                         
                         <li className="nav-item dropdown">

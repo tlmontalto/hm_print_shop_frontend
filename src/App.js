@@ -7,6 +7,7 @@ import Login from './components/Login';
 import DisplayPage from './components/DisplayPage';
 import Navbar from './components/Navbar';
 import {useState, useEffect} from 'react';
+import NewItemForm from './components/NewItemForm'
 
 let baseURL;
 
@@ -30,7 +31,8 @@ const [image, setImage] = useState('')
         <Route path="/" exact component={HomePage}/>
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={Login}/>
-        <Route path="/:item" component={DisplayPage}/>
+        <Route path="/display/:item" exact component={DisplayPage}/>
+        <Route path="/upload" component={NewItemForm}/>
       </Switch>
     </Router>
   );
