@@ -1,11 +1,11 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from './resources/HomePage';
-import SignUp from './resources/SignUp';
-import Login from './resources/Login';
-import DisplayPage from './resources/DisplayPage';
-import Navbar from './resources/Navbar';
+import HomePage from './components/HomePage';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import DisplayPage from './components/DisplayPage';
+import Navbar from './components/Navbar';
 import {useState, useEffect} from 'react';
 
 
