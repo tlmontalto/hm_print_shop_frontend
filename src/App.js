@@ -1,14 +1,28 @@
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePage from './resources/HomePage';
-import SignUp from './resources/SignUp';
-import Login from './resources/Login';
-import DisplayPage from './resources/DisplayPage';
-import Navbar from './resources/Navbar';
+import HomePage from './components/HomePage';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import DisplayPage from './components/DisplayPage';
+import Navbar from './components/Navbar';
+import {useState, useEffect} from 'react';
 
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/hmpusers';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
 
 function App() {
+const [items, setItems] = useState([])
+const [file, setFile] = useState('')
+const [price, setPrice] = useState('')
+const [image, setImage] = useState('')
+
+
   return (
     <Router >
       < Navbar />
@@ -16,7 +30,7 @@ function App() {
         <Route path="/" exact component={HomePage}/>
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={Login}/>
-        <Route path="/display" component={DisplayPage}/>
+        <Route path="/:item" component={DisplayPage}/>
       </Switch>
     </Router>
   );
