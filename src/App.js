@@ -8,6 +8,13 @@ import DisplayPage from './components/DisplayPage';
 import Navbar from './components/Navbar';
 import {useState, useEffect} from 'react';
 
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/hmpusers';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
 
 function App() {
 const [items, setItems] = useState([])
