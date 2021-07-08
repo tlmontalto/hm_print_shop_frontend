@@ -6,9 +6,16 @@ import SignUp from './resources/SignUp';
 import Login from './resources/Login';
 import DisplayPage from './resources/DisplayPage';
 import Navbar from './resources/Navbar';
+import {useState, useEffect} from 'react';
 
 
 function App() {
+const [items, setItems] = useState([])
+const [file, setFile] = useState('')
+const [price, setPrice] = useState('')
+const [image, setImage] = useState('')
+
+
   return (
     <Router >
       < Navbar />
@@ -16,7 +23,7 @@ function App() {
         <Route path="/" exact component={HomePage}/>
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={Login}/>
-        <Route path="/display" component={DisplayPage}/>
+        <Route path="/:item" component={DisplayPage}/>
       </Switch>
     </Router>
   );
