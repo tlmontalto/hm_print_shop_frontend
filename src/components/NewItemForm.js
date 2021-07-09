@@ -12,7 +12,6 @@ export default function NewItemForm() {
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
 
-    const [items, setItems] = useState([])
 
     const submitItem = async (ev) => {
         ev.preventDefault()
