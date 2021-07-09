@@ -19,9 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 
 function App() {
 const [items, setItems] = useState([])
-const [file, setFile] = useState('')
-const [price, setPrice] = useState('')
-const [image, setImage] = useState('')
+
 
 
   return (
