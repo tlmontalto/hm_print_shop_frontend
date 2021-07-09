@@ -14,7 +14,7 @@ export default function DisplayPage({ match }) {
             const res = await axios.get(`${baseURL}/items/${match.params.id}`)
 
             setItem(res.data.data)
-            console.log(match.params.id)
+            // console.log(match.params.id)
         }
         fetchItemData()
     }, [])
@@ -22,9 +22,11 @@ export default function DisplayPage({ match }) {
     return (
         <div>
             <h1>Display Page</h1>
-            <h2>{item.name}</h2>
-            <h3>{item.description}</h3>
-            <h3>{item.price}</h3>
+            <div>
+                <h2>{item.name}</h2>
+                <h3>{item.description}</h3>
+                <h3>{item.price}</h3>
+            </div>
         </div>
     )
 }
