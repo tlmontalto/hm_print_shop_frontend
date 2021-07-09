@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Signup() {
     return (
+
+        // POST user to HMPUser backend, check register backend functions
         <div>
             <h1>Sign Up:</h1>
             <form>
