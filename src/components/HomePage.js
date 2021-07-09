@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const baseURL = 'http://localhost:5000/api/v1/'
 
@@ -22,8 +23,10 @@ export default function HomePage() {
                 {items.map((item, i) => (
                     // fragment
                     <div key={i} >
+                        <Link to={`/display/${i}`}>
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
+                        </Link>
                     </div>
                 ))}
             </div>
