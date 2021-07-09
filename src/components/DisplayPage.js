@@ -1,9 +1,30 @@
-import React from 'react'
+import { useState, useEffect } from 'react';
+import React from 'react';
+import axios from 'axios';
 
-export default function DisplayPage() {
+const baseURL = 'http://localhost:5000/api/v1/'
+
+
+export default function DisplayPage({ match }) {
+
+    const [item, setItem] = useState([])
+
+    useEffect(() => {
+        async function fetchItemData() {
+            const res = await axios.get(`${baseURL}/items/${match.params.id}`)
+
+            setItem(res.data.data)
+            console.log(match.params.id)
+        }
+        fetchItemData()
+    }, [])
+
     return (
         <div>
             <h1>Display Page</h1>
+            <h2>{item.name}</h2>
+            <h3>{item.description}</h3>
+            <h3>{item.price}</h3>
         </div>
     )
 }

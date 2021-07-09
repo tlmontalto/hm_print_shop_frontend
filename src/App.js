@@ -29,7 +29,7 @@ const [items, setItems] = useState([])
         <Route path="/" exact component={HomePage}/>
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={Login}/>
-        <Route path="/display/:item" exact component={DisplayPage}/>
+        <Route path="/display/:id" exact component={DisplayPage}/>
         <Route path="/upload" component={NewItemForm}/>
       </Switch>
     </Router>
