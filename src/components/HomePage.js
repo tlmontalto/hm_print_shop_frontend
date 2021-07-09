@@ -22,8 +22,8 @@ export default function HomePage() {
             <div>
                 {items.map((item, i) => (
                     // fragment
-                    <div key={i} >
-                        <Link to={`/display/${i}`}>
+                    <div key={item.id} >
+                        <Link to={`/display/${item.id}`}>
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>
                         </Link>
