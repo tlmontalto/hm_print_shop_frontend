@@ -13,8 +13,6 @@ export default function HomePage() {
             setItems(res.data.data)
         }
         fetchData()
-        //     axios.get(baseURL + 'items')
-        //     .then((res) => setItems(res.data.data))
     }, [])
 
     return (
