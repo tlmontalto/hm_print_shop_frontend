@@ -4,19 +4,21 @@ export default function Signup() {
     return (
 
         // POST user to HMPUser backend, check register backend functions
-        <div>
+        <div className="mx-3">
             <h1>Sign Up:</h1>
             <form>
 
-                    <label htmlFor="email">Email: </label>
-                    <input type="email" name="email" id="email
-                    " placeholder="JohnDoe@mail.com"/>
+                <div className="mb-3">
+                    <label className="form-label" for="email">Email: </label>
+                    <input className="form-control" type="email" name="email" id="email"/>
+                </div>
 
-                    <label htmlFor="Password">Password: </label>
-                    <input type="password" name="password" id="password" placeholder="Password"/>
+                <div className="mb-3">
+                    <label className="form-label" for="Password">Password: </label>
+                    <input className="form-control" type="password" name="password" id="password"/>
+                </div>
 
-                    
-                    <input type="submit" value="Log In"/>
+                <button className="btn btn-primary" type="submit">Sign Up</button>
 
             </form>
         </div>
