@@ -11,3 +11,20 @@ body {
     display: flex;
     
 } */
+.all-items {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-item {
+    border: 1px solid black;
+    min-width: 25%;
+    width: 30%;
+    height: 350px;
+    margin: .5em;
+    padding: .5em;
+    text-align: center;
+}

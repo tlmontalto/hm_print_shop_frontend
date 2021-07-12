@@ -19,13 +19,15 @@ export default function HomePage() {
     return (
         <div>
             <h1>Home Page</h1>
-            <div>
+
+            <div className="all-items">
                 {items.map((item, i) => (
                     // fragment
-                    <div key={item.id} >
+                    <div className="single-item" key={item.id} >
                         <Link to={`/display/${item.id}`}>
                         <h3>{item.name}</h3>
-                        <p>{item.description}</p>
+                        <img src={item.img_url}/>
+                        <h4>${item.price}</h4>
                         </Link>
                     </div>
                 ))}
