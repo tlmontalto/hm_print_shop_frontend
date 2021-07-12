@@ -10,8 +10,9 @@ export default function NewItemForm() {
     const history = useHistory()
 
     const [name, setName] = useState('')
-    const [file, setFile] = useState('')
     const [description, setDescription] = useState('')
+    const [file, setFile] = useState('')
+    const [image, setImage] = useState('')
     const [price, setPrice] = useState('')
 
 
@@ -20,8 +21,9 @@ export default function NewItemForm() {
         try {
             await axios.post(baseURL + 'items/', {
                 name: name,
-                file_url: file,
                 description: description,
+                file_url: file,
+                img_url: image,
                 price: price
             })
             history.push('/')
@@ -40,15 +42,20 @@ export default function NewItemForm() {
                 <label for="name" className="form-label">Name: </label>
                 <input onChange={(ev) => setName(ev.target.value) } className="form-control" type="text" id="name" name="name" value={name} required/>
                 </div>
+
+                <div className="mb-3">
+                <label for="description" className="form-label">Description: </label>
+                <input onChange={(ev) => setDescription(ev.target.value)} className="form-control" type="text" id="description" name="description" value={description} />
+                </div>
                 
                 <div className="mb-3">
                 <label for="file" className="form-label">File Folder (.zip): </label>
                 <input onChange={(ev) => setFile(ev.target.value)} className="form-control" type="file" id="file" name="file" value={file} required/>
                 </div>
-                
+
                 <div className="mb-3">
-                <label for="description" className="form-label">Description: </label>
-                <input onChange={(ev) => setDescription(ev.target.value)} className="form-control" type="text" id="description" name="description" value={description} />
+                <label for="image" className="form-label">Image Link: </label>
+                <input onChange={(ev) => setImage(ev.target.value)} className="form-control" type="text" id="image" name="image" value={image}/>
                 </div>
                 
                 <div className="mb-3">

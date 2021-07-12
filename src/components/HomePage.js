@@ -26,6 +26,7 @@ export default function HomePage() {
                     <div className="single-item" key={item.id} >
                         <Link to={`/display/${item.id}`}>
                         <h3>{item.name}</h3>
+                        <img src={item.img_url}/>
                         <h4>${item.price}</h4>
                         </Link>
                     </div>

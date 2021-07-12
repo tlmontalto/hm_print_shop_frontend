@@ -51,13 +51,13 @@ export default function Navbar({match}) {
                             <li className="nav-item nav-link">Login</li>
                         </Link>
                         
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{cookies['username'] && cookies['username']}</a>
+                        {cookies['username'] && <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{cookies['username']}</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a className="dropdown-item" href="#">Profile</a></li>
                                 <li><button onClick={logout} className="dropdown-item">Logout</button></li>
                             </ul>
-                        </li>
+                        </li>}
 
                     </ul>
                 </div>
