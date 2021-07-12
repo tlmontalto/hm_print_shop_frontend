@@ -1,21 +1,52 @@
 import React from 'react'
+import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
+
+const baseURL = 'http://localhost:5000/api/v1/'
+
 
 export default function Signup() {
+
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
+    const createNewUser = async (ev) => {
+        ev.preventDefault()
+        try {
+            await axios.post(baseURL + 'hmpusers/register', {
+                username: username,
+                email: email,
+                password: password 
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
 
         // POST user to HMPUser backend, check register backend functions
         <div className="mx-3">
             <h1>Sign Up:</h1>
-            <form>
+            <form onSubmit={createNewUser}>
 
                 <div className="mb-3">
                     <label className="form-label" for="email">Email: </label>
-                    <input className="form-control" type="email" name="email" id="email"/>
+                    <input onChange={(ev) => setUsername(ev.target.value) } className="form-control" type="username" name="username" id="username"/>
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label" for="email">Email: </label>
+                    <input onChange={(ev) => setEmail(ev.target.value) } className="form-control" type="email" name="email" id="email"/>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label" for="Password">Password: </label>
-                    <input className="form-control" type="password" name="password" id="password"/>
+                    <input onChange={(ev) => setPassword(ev.target.value) } className="form-control" type="password" name="password" id="password"/>
                 </div>
 
                 <button className="btn btn-primary" type="submit">Sign Up</button>

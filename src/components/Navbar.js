@@ -18,7 +18,7 @@ export default function Navbar() {
                         <button className="btn btn-outline-success" type="submit">Go</button>
                     </form>
                 
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
                         <Link to="/upload">
                             <li className="nav-item nav-link">Upload</li>
                         </Link>

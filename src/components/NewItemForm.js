@@ -40,12 +40,12 @@ export default function NewItemForm() {
 
                 <div className="mb-3">
                 <label for="name" className="form-label">Name: </label>
-                <input onChange={(ev) => setName(ev.target.value) } className="form-control" type="text" id="name" name="name" value={name} />
+                <input onChange={(ev) => setName(ev.target.value) } className="form-control" type="text" id="name" name="name" value={name} required/>
                 </div>
                 
                 <div className="mb-3">
                 <label for="file" className="form-label">File Folder (.zip): </label>
-                <input onChange={(ev) => setFile(ev.target.value)} className="form-control" type="file" id="file" name="file" value={file} />
+                <input onChange={(ev) => setFile(ev.target.value)} className="form-control" type="file" id="file" name="file" value={file} required/>
                 </div>
                 
                 <div className="mb-3">
@@ -55,7 +55,7 @@ export default function NewItemForm() {
                 
                 <div className="mb-3">
                 <label for="price" className="form-label">Price ($): </label>
-                <input onChange={(ev) => setPrice(ev.target.value)} className="form-control" type="text" id="price" name="price" value={price}/>
+                <input onChange={(ev) => setPrice(ev.target.value)} className="form-control" type="text" id="price" name="price" value={price} required/>
                 </div>
                 
                 <button className="btn btn-primary" type="submit">Upload</button>
