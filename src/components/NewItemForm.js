@@ -1,12 +1,13 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios'
-import {Link} from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 
 const baseURL = 'http://localhost:5000/api/v1/'
 
 export default function NewItemForm() {
+
+    const history = useHistory()
 
     const [name, setName] = useState('')
     const [file, setFile] = useState('')
@@ -21,17 +22,14 @@ export default function NewItemForm() {
                 name: name,
                 file_url: file,
                 description: description,
-                price: price 
+                price: price
             })
+            history.push('/')
         }
         catch (err) {
             console.log(err)
         }
     }
-
-    // const redirectHome = () => {
-    //     return <Redirect to='/'/>
-    // }
 
     return (
         <div className="mx-3">
