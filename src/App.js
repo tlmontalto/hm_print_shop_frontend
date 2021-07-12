@@ -7,12 +7,13 @@ import Login from './components/Login';
 import DisplayPage from './components/DisplayPage';
 import Navbar from './components/Navbar';
 import {useState, useEffect} from 'react';
-import NewItemForm from './components/NewItemForm'
+import NewItemForm from './components/NewItemForm';
+import UserContextProvider from './context/UserContext';
 
 let baseURL;
 
 if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:5000/api/v1/hmpusers';
+  baseURL = 'http://localhost:5000/api/v1/';
 } else {
   baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
 }
@@ -24,7 +25,9 @@ const [items, setItems] = useState([])
 
   return (
     <Router >
-      < Navbar />
+      <UserContextProvider>
+        < Navbar />
+      </UserContextProvider>
       <Switch>
         <Route path="/" exact component={HomePage}/>
         <Route path="/signup" component={SignUp}/>

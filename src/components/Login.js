@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link, useHistory} from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 const baseURL = 'http://localhost:5000/api/v1/'
 
@@ -9,17 +9,23 @@ export default function Login() {
 
     const history = useHistory()
 
+    const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const [cookies, setCookie, removeCookie] = useCookies('username')
 
     const loginUser = async (ev) => {
         ev.preventDefault()
         try {
-            await axios.post(baseURL + 'hmpusers/login', {
+            const res = await axios.post(baseURL + 'hmpusers/login', {
                 email: email,
                 password: password
-            })
+            }, {withCredentials: true})
+            setUsername(res.data.data.username)
+            setEmail(res.data.data.email)
+            setPassword(res.data.data.password)
+            setCookie('username', res.data.data.username, { path: '/' })
             history.push('/')
         }
         catch (err) {
