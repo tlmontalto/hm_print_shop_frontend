@@ -17,19 +17,17 @@ export default function HomePage() {
     }, [])
 
     return (
-        <div>
-            <h1 className="page-title">Home Page</h1>
+        <div className="homepage">
+            {/* <h1 className="page-title">Home Page</h1> */}
 
             <div className="all-items">
                 {items.map((item, i) => (
                     // fragment
-                    <div className="single-item" key={item.id} >
-                        <Link to={`/display/${item.id}`}>
-                        <h3>{item.name}</h3>
-                        <img className="home-images" src={item.img_url}/>
-                        <h4>${item.price}</h4>
-                        </Link>
-                    </div>
+                    <Link className="single-item" to={`/display/${item.id}`} key={item.id}>
+                    <h3 className="home-name">{item.name}</h3>
+                    <img className="home-images" src={item.img_url}/>
+                    <h4 className="home-price">${item.price}</h4>
+                    </Link>
                 ))}
             </div>
         </div>

@@ -37,27 +37,27 @@ export default function Login() {
 
 
         // GET user from HMPUser backend, check login backend functions
-        <div className="mx-3">
+        <div className="loginpage">
             <h1 className="page-title">Log In:</h1>
             <form onSubmit={loginUser}>
 
                 <div className="mb-3">
-                    <label className="form-label" for="email">Email: </label>
+                    <label className="form-label fs-4" for="email">Email: </label>
                     <input onChange={(ev) => setEmail(ev.target.value) } className="form-control" type="email" name="email" id="email" required/>
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label" for="Password">Password: </label>
+                    <label className="form-label fs-4" for="Password">Password: </label>
                     <input onChange={(ev) => setPassword(ev.target.value) } className="form-control" type="password" name="password" id="password" required/>
                 </div>
 
-                <button className="btn btn-primary" type="submit">Log In</button>
+                <button className="btn btn-secondary fs-5" type="submit">Log In</button>
 
             </form>
 
             <div>
                 <Link to={'/signup'}>
-                <p>Not a Member? Create Account.</p>
+                <p className="fs-4">Not a Member? Create Account.</p>
                 </Link>
             </div>
         </div>

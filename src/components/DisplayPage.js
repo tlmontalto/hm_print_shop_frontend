@@ -20,13 +20,12 @@ export default function DisplayPage({ match }) {
     }, [])
 
     return (
-        <div>
-            <h1 className="page-title">Display Page</h1>
-            <div>
+        <div className="displaypage">
+            <div className="display-item">
                 <h2>{item.name}</h2>
                 <img className="display-img" src={item.img_url}/>
-                <h3>{item.description}</h3>
-                <h3>{item.price}</h3>
+                <h5>{item.description}</h5>
+                <h3>${item.price}</h3>
             </div>
         </div>
     )
