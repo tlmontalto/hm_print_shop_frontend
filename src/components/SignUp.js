@@ -34,7 +34,7 @@ export default function Signup() {
 
         // POST user to HMPUser backend, check register backend functions
         <div className="mx-3">
-            <h1>Sign Up:</h1>
+            <h1 className="page-title">Sign Up:</h1>
             <form onSubmit={createNewUser}>
 
                 <div className="mb-3">

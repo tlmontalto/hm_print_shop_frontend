@@ -35,7 +35,7 @@ export default function NewItemForm() {
 
     return (
         <div className="mx-3">
-            <h1>Upload New Item:</h1>
+            <h1 className="page-title">Upload New Item:</h1>
             <form onSubmit={submitItem}>
 
                 <div className="mb-3">
