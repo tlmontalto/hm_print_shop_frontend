@@ -21,7 +21,7 @@ export default function DisplayPage({ match }) {
 
     return (
         <div>
-            <h1>Display Page</h1>
+            <h1 className="page-title">Display Page</h1>
             <div>
                 <h2>{item.name}</h2>
                 <img className="display-img" src={item.img_url}/>

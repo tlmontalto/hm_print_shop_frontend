@@ -38,7 +38,7 @@ export default function Login() {
 
         // GET user from HMPUser backend, check login backend functions
         <div className="mx-3">
-            <h1>Log In:</h1>
+            <h1 className="page-title">Log In:</h1>
             <form onSubmit={loginUser}>
 
                 <div className="mb-3">
