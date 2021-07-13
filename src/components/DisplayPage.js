@@ -24,6 +24,7 @@ export default function DisplayPage({ match }) {
             <h1>Display Page</h1>
             <div>
                 <h2>{item.name}</h2>
+                <img className="display-img" src={item.img_url}/>
                 <h3>{item.description}</h3>
                 <h3>{item.price}</h3>
             </div>

@@ -28,3 +28,11 @@ body {
     padding: .5em;
     text-align: center;
 }
+
+.home-images {
+    width: 200px;
+}
+
+.display-img {
+    width: 500px;
+}
