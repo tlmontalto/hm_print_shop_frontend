@@ -11,6 +11,11 @@ body {
     display: flex;
     
 } */
+
+.page-title {
+    text-align: center;
+}
+
 .all-items {
     width: 100%;
     display: flex;
