@@ -34,36 +34,36 @@ export default function NewItemForm() {
     }
 
     return (
-        <div className="mx-3">
+        <div className="upload-page">
             <h1 className="page-title">Upload New Item:</h1>
             <form onSubmit={submitItem}>
 
                 <div className="mb-3">
-                <label for="name" className="form-label">Name: </label>
+                <label for="name" className="form-label fs-4">Name: </label>
                 <input onChange={(ev) => setName(ev.target.value) } className="form-control" type="text" id="name" name="name" value={name} required/>
                 </div>
 
                 <div className="mb-3">
-                <label for="description" className="form-label">Description: </label>
+                <label for="description" className="form-label fs-4">Description: </label>
                 <input onChange={(ev) => setDescription(ev.target.value)} className="form-control" type="text" id="description" name="description" value={description} />
                 </div>
                 
                 <div className="mb-3">
-                <label for="file" className="form-label">File Folder (.zip): </label>
+                <label for="file" className="form-label fs-4">File Folder (.zip): </label>
                 <input onChange={(ev) => setFile(ev.target.value)} className="form-control" type="file" id="file" name="file" value={file} required/>
                 </div>
 
                 <div className="mb-3">
-                <label for="image" className="form-label">Image Link: </label>
+                <label for="image" className="form-label fs-4">Image Link: </label>
                 <input onChange={(ev) => setImage(ev.target.value)} className="form-control" type="text" id="image" name="image" value={image}/>
                 </div>
                 
                 <div className="mb-3">
-                <label for="price" className="form-label">Price ($): </label>
+                <label for="price" className="form-label fs-4">Price ($): </label>
                 <input onChange={(ev) => setPrice(ev.target.value)} className="form-control" type="text" id="price" name="price" value={price} required/>
                 </div>
                 
-                <button className="btn btn-primary" type="submit">Upload</button>
+                <button className="btn btn-secondary fs-5" type="submit">Upload</button>
 
             </form>
 

@@ -33,26 +33,26 @@ export default function Signup() {
     return (
 
         // POST user to HMPUser backend, check register backend functions
-        <div className="mx-3">
+        <div className="signup-page">
             <h1 className="page-title">Sign Up:</h1>
             <form onSubmit={createNewUser}>
 
                 <div className="mb-3">
-                    <label className="form-label" for="email">Username: </label>
+                    <label className="form-label fs-4" for="email">Username: </label>
                     <input onChange={(ev) => setUsername(ev.target.value) } className="form-control" type="username" name="username" id="username"/>
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label" for="email">Email: </label>
+                    <label className="form-label fs-4" for="email">Email: </label>
                     <input onChange={(ev) => setEmail(ev.target.value) } className="form-control" type="email" name="email" id="email" required/>
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label" for="Password">Password: </label>
+                    <label className="form-label fs-4" for="Password">Password: </label>
                     <input onChange={(ev) => setPassword(ev.target.value) } className="form-control" type="password" name="password" id="password" required/>
                 </div>
 
-                <button className="btn btn-primary" type="submit">Sign Up</button>
+                <button className="btn btn-secondary fs-5" type="submit">Sign Up</button>
 
             </form>
         </div>

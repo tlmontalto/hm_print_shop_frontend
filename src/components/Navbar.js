@@ -28,13 +28,13 @@ export default function Navbar({match}) {
     const [cookies, setCookie, removeCookie] = useCookies(['username'])
 
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-md fixed-top">
             <div className="container-fluid">
 
                 <Link to="/">
-                <a className="navbar-brand" href="#">High Mountain Printing</a>
+                <a className="navbar-brand fs-3" href="#">High Mountain Printing</a>
                 </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle-navigation">
+                <button className="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle-navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,16 +45,16 @@ export default function Navbar({match}) {
                 
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-end">
                         <Link to="/upload">
-                            <li className="nav-item nav-link">Upload</li>
+                            <li className="nav-item nav-link fs-5">Upload</li>
                         </Link>
                         <Link to="/login">
-                            <li className="nav-item nav-link">Login</li>
+                            <li className="nav-item nav-link fs-5">Login</li>
                         </Link>
                         
-                        {cookies['username'] && <li className="nav-item dropdown">
+                        {cookies['username'] && <li className="nav-item dropdown dropdown-menu-lg-start fs-5">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{cookies['username']}</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Profile</a></li>
+                                {/* <li><a className="dropdown-item" href="#">Profile</a></li> */}
                                 <li><button onClick={logout} className="dropdown-item">Logout</button></li>
                             </ul>
                         </li>}

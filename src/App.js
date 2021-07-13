@@ -24,6 +24,7 @@ const [items, setItems] = useState([])
 
 
   return (
+    <div className="whole-app">
     <Router >
       <UserContextProvider>
         < Navbar />
@@ -36,6 +37,7 @@ const [items, setItems] = useState([])
         <Route path="/upload" component={NewItemForm}/>
       </Switch>
     </Router>
+    </div>
   );
 }
 
