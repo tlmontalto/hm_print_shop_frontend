@@ -10,15 +10,15 @@ import {useState, useEffect} from 'react';
 import NewItemForm from './components/NewItemForm';
 import UserContextProvider from './context/UserContext';
 
-// let baseURL;
+let baseURL;
 
-// if (process.env.NODE_ENV === 'development') {
-//   baseURL = 'http://localhost:5000/api/v1/';
-// } else {
-//   baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/';
-// }
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/';
+}
 
-const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
+// const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
 
 function App() {
 const [items, setItems] = useState([])

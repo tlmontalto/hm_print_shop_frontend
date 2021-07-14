@@ -5,15 +5,15 @@ import { UserContext } from '../context/UserContext';
 import { withCookies, useCookies} from 'react-cookie';
 
 
-// let baseURL;
+let baseURL;
 
-// if (process.env.NODE_ENV === 'development') {
-//   baseURL = 'http://localhost:5000/api/v1/';
-// } else {
-//   baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
-// }
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
 
-const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
+// const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
 
 export default function Navbar({match}) {
 
