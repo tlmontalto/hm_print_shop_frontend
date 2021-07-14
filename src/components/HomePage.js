@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-let baseURL;
+// let baseURL;
 
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:5000/api/v1/';
-} else {
-  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
-}
+// if (process.env.NODE_ENV === 'development') {
+//   baseURL = 'http://localhost:5000/api/v1/';
+// } else {
+//   baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+// }
+
+const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
 
 export default function HomePage() {
 
