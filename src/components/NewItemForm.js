@@ -3,15 +3,15 @@ import axios from 'axios'
 import {Link, useHistory} from 'react-router-dom';
 
 
-let baseURL;
+// let baseURL;
 
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:5000/api/v1/';
-} else {
-  baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/';
-}
+// if (process.env.NODE_ENV === 'development') {
+//   baseURL = 'http://localhost:5000/api/v1/';
+// } else {
+//   baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/';
+// }
 
-// const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
+const baseURL = 'https://hm-print-shop-backend.herokuapp.com/api/v1/'
 
 export default function NewItemForm() {
 
