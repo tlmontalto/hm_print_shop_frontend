@@ -5,9 +5,15 @@ import { UserContext } from '../context/UserContext';
 import { withCookies, useCookies} from 'react-cookie';
 
 
-export default function Navbar({match}) {
+let baseURL;
 
-    const baseURL = 'http://localhost:5000/api/v1/'
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
+
+export default function Navbar({match}) {
 
     const history = useHistory()
 

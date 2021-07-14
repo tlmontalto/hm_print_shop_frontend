@@ -3,7 +3,13 @@ import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 
-const baseURL = 'http://localhost:5000/api/v1/'
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
 
 export default function Login() {
 

@@ -2,7 +2,13 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:5000/api/v1/'
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:5000/api/v1/';
+} else {
+  baseURL = 'https://hm-print-shop-backend.herokuapp.com/';
+}
 
 
 export default function DisplayPage({ match }) {
